@@ -1,0 +1,931 @@
+
+# This is the monitoring configuration for Riak.
+# Look for RIAK_HOST and RIAK_PORT to adjust your configuration file.
+LoadPlugin curl_json
+<Plugin "curl_json">
+    # When using non-standard Riak configurations, replace the below with
+    #<URL "http://RIAK_HOST:RIAK_PORT/stats">
+    <URL "http://localhost:8098/stats">
+        Instance "riak"
+
+        <Key "pbc_active">
+            Type "counter"
+        </Key>
+        <Key "pbc_connects">
+            Type "gauge"
+        </Key>
+        <Key "pbc_connects_total">
+            Type "counter"
+        </Key>
+        <Key "converge_delay_last">
+            Type "gauge"
+        </Key>
+        <Key "converge_delay_max">
+            Type "gauge"
+        </Key>
+        <Key "converge_delay_mean">
+            Type "gauge"
+        </Key>
+        <Key "converge_delay_min">
+            Type "gauge"
+        </Key>
+        <Key "cpu_avg1">
+            Type "gauge"
+        </Key>
+        <Key "cpu_avg15">
+            Type "gauge"
+        </Key>
+        <Key "cpu_avg5">
+            Type "gauge"
+        </Key>
+        <Key "cpu_nprocs">
+            Type "gauge"
+        </Key>
+        <Key "dropped_vnode_requests_total">
+            Type "counter"
+        </Key>
+        <Key "executing_mappers">
+            Type "gauge"
+        </Key>
+        <Key "gossip_received">
+            Type "gauge"
+        </Key>
+        <Key "handoff_timeouts">
+            Type "gauge"
+        </Key>
+        <Key "ignored_gossip_total">
+            Type "counter"
+        </Key>
+        <Key "index_fsm_active">
+            Type "gauge"
+        </Key>
+        <Key "index_fsm_create">
+            Type "gauge"
+        </Key>
+        <Key "index_fsm_create_error">
+            Type "gauge"
+        </Key>
+        <Key "late_put_fsm_coordinator_ack">
+            Type "gauge"
+        </Key>
+        <Key "leveldb_read_block_error">
+            Type "gauge"
+        </Key>
+        <Key "list_fsm_active">
+            Type "gauge"
+        </Key>
+        <Key "list_fsm_create">
+            Type "gauge"
+        </Key>
+        <Key "list_fsm_create_error">
+            Type "gauge"
+        </Key>
+        <Key "list_fsm_create_error_total">
+            Type "counter"
+        </Key>
+        <Key "list_fsm_create_total">
+            Type "counter"
+        </Key>
+        <Key "mem_allocated">
+            Type "gauge"
+        </Key>
+        <Key "memory_atom_used">
+            Type "gauge"
+        </Key>
+        <Key "memory_binary">
+            Type "gauge"
+        </Key>
+        <Key "memory_processes_used">
+            Type "gauge"
+        </Key>
+        <Key "node_get_fsm_active">
+            Type "gauge"
+        </Key>
+        <Key "node_get_fsm_active_60s">
+            Type "gauge"
+        </Key>
+        <Key "node_get_fsm_counter_objsize_100">
+            Type "gauge"
+        </Key>
+        <Key "node_get_fsm_counter_objsize_95">
+            Type "gauge"
+        </Key>
+        <Key "node_get_fsm_counter_objsize_99">
+            Type "gauge"
+        </Key>
+        <Key "node_get_fsm_counter_objsize_median">
+            Type "gauge"
+        </Key>
+        <Key "node_get_fsm_counter_siblings_99">
+            Type "gauge"
+        </Key>
+        <Key "node_get_fsm_counter_siblings_median">
+            Type "gauge"
+        </Key>
+        <Key "node_get_fsm_counter_time_100">
+            Type "gauge"
+        </Key>
+        <Key "node_get_fsm_counter_time_95">
+            Type "gauge"
+        </Key>
+        <Key "node_get_fsm_counter_time_99">
+            Type "gauge"
+        </Key>
+        <Key "node_get_fsm_counter_time_mean">
+            Type "gauge"
+        </Key>
+        <Key "node_get_fsm_counter_time_median">
+            Type "gauge"
+        </Key>
+        <Key "node_get_fsm_errors">
+            Type "gauge"
+        </Key>
+        <Key "node_get_fsm_errors_total">
+            Type "counter"
+        </Key>
+        <Key "node_get_fsm_objsize_100">
+            Type "gauge"
+        </Key>
+        <Key "node_get_fsm_objsize_95">
+            Type "gauge"
+        </Key>
+        <Key "node_get_fsm_objsize_99">
+            Type "gauge"
+        </Key>
+        <Key "node_get_fsm_objsize_mean">
+            Type "gauge"
+        </Key>
+        <Key "node_get_fsm_objsize_median">
+            Type "gauge"
+        </Key>
+        <Key "node_get_fsm_out_rate">
+            Type "gauge"
+        </Key>
+        <Key "node_get_fsm_rejected">
+            Type "gauge"
+        </Key>
+        <Key "node_get_fsm_rejected_60s">
+            Type "gauge"
+        </Key>
+        <Key "node_get_fsm_rejected_total">
+            Type "counter"
+        </Key>
+        <Key "node_get_fsm_set_objsize_100">
+            Type "gauge"
+        </Key>
+        <Key "node_get_fsm_set_objsize_95">
+            Type "gauge"
+        </Key>
+        <Key "node_get_fsm_set_objsize_99">
+            Type "gauge"
+        </Key>
+        <Key "node_get_fsm_set_objsize_mean">
+            Type "gauge"
+        </Key>
+        <Key "node_get_fsm_set_objsize_median">
+            Type "gauge"
+        </Key>
+        <Key "node_get_fsm_set_siblings_100">
+            Type "gauge"
+        </Key>
+        <Key "node_get_fsm_set_siblings_95">
+            Type "gauge"
+        </Key>
+        <Key "node_get_fsm_set_siblings_99">
+            Type "gauge"
+        </Key>
+        <Key "node_get_fsm_set_siblings_mean">
+            Type "gauge"
+        </Key>
+        <Key "node_get_fsm_set_siblings_median">
+            Type "gauge"
+        </Key>
+        <Key "node_get_fsm_set_time_100">
+            Type "gauge"
+        </Key>
+        <Key "node_get_fsm_set_time_95">
+            Type "gauge"
+        </Key>
+        <Key "node_get_fsm_set_time_99">
+            Type "gauge"
+        </Key>
+        <Key "node_get_fsm_set_time_mean">
+            Type "gauge"
+        </Key>
+        <Key "node_get_fsm_set_time_median">
+            Type "gauge"
+        </Key>
+       <Key "node_get_fsm_siblings_99">
+            Type "gauge"
+        </Key>
+        <Key "node_get_fsm_siblings_median">
+            Type "gauge"
+        </Key>
+        <Key "node_get_fsm_time_99">
+            Type "gauge"
+        </Key>
+        <Key "node_get_fsm_time_median">
+            Type "gauge"
+        </Key>
+        <Key "node_gets">
+            Type "gauge"
+        </Key>
+        <Key "node_gets_set">
+            Type "gauge"
+        </Key>
+        <Key "node_gets_set_total">
+            Type "counter"
+        </Key>
+        <Key "node_put_fsm_active">
+            Type "gauge"
+        </Key>
+        <Key "node_put_fsm_active_60s">
+            Type "gauge"
+        </Key>
+        <Key "node_put_fsm_counter_time_100">
+            Type "gauge"
+        </Key>
+        <Key "node_put_fsm_counter_time_95">
+            Type "gauge"
+        </Key>
+        <Key "node_put_fsm_counter_time_99">
+            Type "gauge"
+        </Key>
+        <Key "node_put_fsm_counter_time_mean">
+            Type "gauge"
+        </Key>
+        <Key "node_put_fsm_counter_time_median">
+            Type "gauge"
+        </Key>
+        <Key "node_put_fsm_out_rate">
+            Type "gauge"
+        </Key>
+        <Key "node_put_fsm_rejected">
+            Type "gauge"
+        </Key>
+        <Key "node_put_fsm_rejected_60s">
+            Type "gauge"
+        </Key>
+        <Key "node_put_fsm_rejected_total">
+            Type "counter"
+        </Key>
+        <Key "node_put_fsm_set_time_100">
+            Type "gauge"
+        </Key>
+        <Key "node_put_fsm_set_time_95">
+            Type "gauge"
+        </Key>
+        <Key "node_put_fsm_set_time_99">
+            Type "gauge"
+        </Key>
+        <Key "node_put_fsm_set_time_mean">
+            Type "gauge"
+        </Key>
+        <Key "node_put_fsm_set_time_median">
+            Type "gauge"
+        </Key>
+        <Key "node_put_fsm_time_99">
+            Type "gauge"
+        </Key>
+        <Key "node_puts">
+            Type "gauge"
+        </Key>
+        <Key "node_puts_counter">
+            Type "gauge"
+        </Key>
+        <Key "node_puts_counter_total">
+            Type "counter"
+        </Key>
+        <Key "node_puts_set">
+            Type "gauge"
+        </Key>
+        <Key "node_puts_set_total">
+            Type "counter"
+        </Key>
+        <Key "node_puts_total">
+            Type "counter"
+        </Key>
+        <Key "object_counter_merge">
+            Type "gauge"
+        </Key>
+        <Key "object_counter_merge_time_100">
+            Type "gauge"
+        </Key>
+        <Key "object_counter_merge_time_95">
+            Type "gauge"
+        </Key>
+        <Key "object_counter_merge_time_99">
+            Type "gauge"
+        </Key>
+        <Key "object_counter_merge_time_mean">
+            Type "gauge"
+        </Key>
+        <Key "object_counter_merge_time_median">
+            Type "gauge"
+        </Key>
+        <Key "object_counter_merge_total">
+            Type "counter"
+        </Key>
+        <Key "object_merge">
+            Type "gauge"
+        </Key>
+        <Key "object_merge_time_100">
+            Type "gauge"
+        </Key>
+        <Key "object_merge_time_95">
+            Type "gauge"
+        </Key>
+        <Key "object_merge_time_99">
+            Type "gauge"
+        </Key>
+        <Key "object_merge_time_mean">
+            Type "gauge"
+        </Key>
+        <Key "object_merge_time_median">
+            Type "gauge"
+        </Key>
+        <Key "object_merge_total">
+            Type "counter"
+        </Key>
+        <Key "object_set_merge">
+            Type "gauge"
+        </Key>
+        <Key "object_set_merge_time_100">
+            Type "gauge"
+        </Key>
+        <Key "object_set_merge_time_95">
+            Type "gauge"
+        </Key>
+        <Key "object_set_merge_time_99">
+            Type "gauge"
+        </Key>
+        <Key "object_set_merge_time_mean">
+            Type "gauge"
+        </Key>
+        <Key "object_set_merge_time_median">
+            Type "gauge"
+        </Key>
+        <Key "object_set_merge_total">
+            Type "counter"
+        </Key>
+        <Key "pipeline_active">
+            Type "gauge"
+        </Key>
+        <Key "pipeline_create_count">
+            Type "gauge"
+        </Key>
+        <Key "pipeline_create_error_count">
+            Type "gauge"
+        </Key>
+        <Key "pipeline_create_error_one">
+            Type "gauge"
+        </Key>
+        <Key "pipeline_create_one">
+            Type "gauge"
+        </Key>
+        <Key "postcommit_fail">
+            Type "gauge"
+        </Key>
+        <Key "precommit_fail">
+            Type "gauge"
+        </Key>
+        <Key "read_repairs">
+            Type "gauge"
+        </Key>
+        <Key "read_repairs_counter">
+            Type "gauge"
+        </Key>
+        <Key "read_repairs_counter_total">
+            Type "counter"
+        </Key>
+        <Key "read_repairs_fallback_notfound_count">
+            Type "gauge"
+        </Key>
+        <Key "read_repairs_fallback_notfound_one">
+            Type "gauge"
+        </Key>
+        <Key "read_repairs_fallback_outofdate_count">
+            Type "gauge"
+        </Key>
+        <Key "read_repairs_fallback_outofdate_one">
+            Type "gauge"
+        </Key>
+        <Key "read_repairs_primary_notfound_count">
+            Type "gauge"
+        </Key>
+        <Key "read_repairs_primary_notfound_one">
+            Type "gauge"
+        </Key>
+        <Key "read_repairs_primary_outofdate_count">
+            Type "gauge"
+        </Key>
+        <Key "read_repairs_primary_outofdate_one">
+            Type "gauge"
+        </Key>
+        <Key "read_repairs_set">
+            Type "gauge"
+        </Key>
+        <Key "read_repairs_set_total">
+            Type "counter"
+        </Key>
+        <Key "read_repairs_total">
+            Type "counter"
+        </Key>
+        <Key "rebalance_delay_last">
+            Type "gauge"
+        </Key>
+        <Key "rebalance_delay_max">
+            Type "gauge"
+        </Key>
+        <Key "rebalance_delay_mean">
+            Type "gauge"
+        </Key>
+        <Key "rebalance_delay_min">
+            Type "gauge"
+        </Key>
+        <Key "rejected_handoffs">
+            Type "gauge"
+        </Key>
+        <Key "riak_kv_vnodeq_max">
+            Type "gauge"
+        </Key>
+        <Key "riak_kv_vnodeq_mean">
+            Type "gauge"
+        </Key>
+        <Key "riak_kv_vnodeq_median">
+            Type "gauge"
+        </Key>
+        <Key "riak_kv_vnodeq_min">
+            Type "gauge"
+        </Key>
+        <Key "riak_kv_vnodeq_total">
+            Type "gauge"
+        </Key>
+        <Key "riak_kv_vnodes_running">
+            Type "gauge"
+        </Key>
+        <Key "riak_pipe_vnodeq_max">
+            Type "gauge"
+        </Key>
+        <Key "riak_pipe_vnodeq_mean">
+            Type "gauge"
+        </Key>
+        <Key "riak_pipe_vnodeq_median">
+            Type "gauge"
+        </Key>
+        <Key "riak_pipe_vnodeq_min">
+            Type "gauge"
+        </Key>
+        <Key "riak_pipe_vnodeq_total">
+            Type "counter"
+        </Key>
+        <Key "riak_pipe_vnodes_running">
+            Type "gauge"
+        </Key>
+        <Key "rings_reconciled">
+            Type "gauge"
+        </Key>
+        <Key "rings_reconciled_total">
+            Type "counter"
+        </Key>
+        <Key "search_blockedvnode_count">
+            Type "gauge"
+        </Key>
+        <Key "search_blockedvnode_one">
+            Type "gauge"
+        </Key>
+        <Key "search_detected_repairs_count">
+            Type "gauge"
+        </Key>
+        <Key "search_index_bad_entry_count">
+            Type "gauge"
+        </Key>
+        <Key "search_index_bad_entry_one">
+            Type "gauge"
+        </Key>
+        <Key "search_index_error_threshold_blown_count">
+            Type "gauge"
+        </Key>
+        <Key "search_index_error_threshold_blown_one">
+            Type "gauge"
+        </Key>
+        <Key "search_index_error_threshold_failure_count">
+            Type "gauge"
+        </Key>
+        <Key "search_index_error_threshold_failure_one">
+            Type "gauge"
+        </Key>
+        <Key "search_index_error_threshold_ok_count">
+            Type "gauge"
+        </Key>
+        <Key "search_index_error_threshold_ok_one">
+            Type "gauge"
+        </Key>
+        <Key "search_index_error_threshold_recovered_count">
+            Type "gauge"
+        </Key>
+        <Key "search_index_error_threshold_recovered_one">
+            Type "gauge"
+        </Key>
+        <Key "search_index_extract_fail_count">
+            Type "gauge"
+        </Key>
+        <Key "search_index_extract_fail_one">
+            Type "gauge"
+        </Key>
+        <Key "search_index_fail_count">
+            Type "gauge"
+        </Key>
+        <Key "search_index_fail_one">
+            Type "gauge"
+        </Key>
+        <Key "search_index_latency_95">
+            Type "gauge"
+        </Key>
+        <Key "search_index_latency_99">
+            Type "gauge"
+        </Key>
+        <Key "search_index_latency_999">
+            Type "gauge"
+        </Key>
+        <Key "search_index_latency_max">
+            Type "gauge"
+        </Key>
+        <Key "search_index_latency_mean">
+            Type "gauge"
+        </Key>
+        <Key "search_index_latency_median">
+            Type "gauge"
+        </Key>
+        <Key "search_index_latency_min">
+            Type "gauge"
+        </Key>
+        <Key "search_index_throughput_count">
+            Type "gauge"
+        </Key>
+        <Key "search_index_throughput_one">
+            Type "gauge"
+        </Key>
+        <Key "search_query_fail_count">
+            Type "gauge"
+        </Key>
+        <Key "search_query_fail_one">
+            Type "gauge"
+        </Key>
+        <Key "search_query_latency_95">
+            Type "gauge"
+        </Key>
+        <Key "search_query_latency_99">
+            Type "gauge"
+        </Key>
+        <Key "search_query_latency_999">
+            Type "gauge"
+        </Key>
+        <Key "search_query_latency_max">
+            Type "gauge"
+        </Key>
+        <Key "search_query_latency_mean">
+            Type "gauge"
+        </Key>
+        <Key "search_query_latency_median">
+            Type "gauge"
+        </Key>
+        <Key "search_query_latency_min">
+            Type "gauge"
+        </Key>
+        <Key "search_query_throughput_count">
+            Type "gauge"
+        </Key>
+        <Key "search_query_throughput_one">
+            Type "gauge"
+        </Key>
+        <Key "search_queue_batch_latency_95">
+            Type "gauge"
+        </Key>
+        <Key "search_queue_batch_latency_99">
+            Type "gauge"
+        </Key>
+        <Key "search_queue_batch_latency_999">
+            Type "gauge"
+        </Key>
+        <Key "search_queue_batch_latency_max">
+            Type "gauge"
+        </Key>
+        <Key "search_queue_batch_latency_mean">
+            Type "gauge"
+        </Key>
+        <Key "search_queue_batch_latency_median">
+            Type "gauge"
+        </Key>
+        <Key "search_queue_batch_latency_min">
+            Type "gauge"
+        </Key>
+        <Key "search_queue_batch_throughput_count">
+            Type "gauge"
+        </Key>
+        <Key "search_queue_batch_throughput_one">
+            Type "gauge"
+        </Key>
+        <Key "search_queue_batchsize_max">
+            Type "gauge"
+        </Key>
+        <Key "search_queue_batchsize_mean">
+            Type "gauge"
+        </Key>
+        <Key "search_queue_batchsize_median">
+            Type "gauge"
+        </Key>
+        <Key "search_queue_batchsize_min">
+            Type "gauge"
+        </Key>
+        <Key "search_queue_drain_cancel_timeout_count">
+            Type "gauge"
+        </Key>
+        <Key "search_queue_drain_cancel_timeout_one">
+            Type "gauge"
+        </Key>
+        <Key "search_queue_drain_count">
+            Type "gauge"
+        </Key>
+        <Key "search_queue_drain_fail_count">
+            Type "gauge"
+        </Key>
+        <Key "search_queue_drain_fail_one">
+            Type "gauge"
+        </Key>
+        <Key "search_queue_drain_latency_95">
+            Type "gauge"
+        </Key>
+        <Key "search_queue_drain_latency_99">
+            Type "gauge"
+        </Key>
+        <Key "search_queue_drain_latency_999">
+            Type "gauge"
+        </Key>
+        <Key "search_queue_drain_latency_max">
+            Type "gauge"
+        </Key>
+        <Key "search_queue_drain_latency_mean">
+            Type "gauge"
+        </Key>
+        <Key "search_queue_drain_latency_median">
+            Type "gauge"
+        </Key>
+        <Key "search_queue_drain_latency_min">
+            Type "gauge"
+        </Key>
+        <Key "search_queue_drain_one">
+            Type "gauge"
+        </Key>
+        <Key "search_queue_drain_timeout_count">
+            Type "gauge"
+        </Key>
+        <Key "search_queue_drain_timeout_one">
+            Type "gauge"
+        </Key>
+        <Key "search_queue_hwm_purged_count">
+            Type "gauge"
+        </Key>
+        <Key "search_queue_hwm_purged_one">
+            Type "gauge"
+        </Key>
+        <Key "search_queue_total_length">
+            Type "gauge"
+        </Key>
+        <Key "set_actor_counts_100">
+            Type "gauge"
+        </Key>
+        <Key "set_actor_counts_95">
+            Type "gauge"
+        </Key>
+        <Key "set_actor_counts_99">
+            Type "gauge"
+        </Key>
+        <Key "set_actor_counts_mean">
+            Type "gauge"
+        </Key>
+        <Key "set_actor_counts_median">
+            Type "gauge"
+        </Key>
+        <Key "skipped_read_repairs">
+            Type "gauge"
+        </Key>
+        <Key "skipped_read_repairs_total">
+            Type "gauge"
+        </Key>
+        <Key "vnode_counter_update">
+            Type "gauge"
+        </Key>
+        <Key "vnode_counter_update_time_100">
+            Type "gauge"
+        </Key>
+        <Key "vnode_counter_update_time_95">
+            Type "gauge"
+        </Key>
+        <Key "vnode_counter_update_time_99">
+            Type "gauge"
+        </Key>
+        <Key "vnode_counter_update_time_mean">
+            Type "gauge"
+        </Key>
+        <Key "vnode_counter_update_time_median">
+            Type "gauge"
+        </Key>
+        <Key "vnode_counter_update_total">
+            Type "counter"
+        </Key>
+        <Key "vnode_get_fsm_time_100">
+            Type "gauge"
+        </Key>
+        <Key "vnode_get_fsm_time_95">
+            Type "gauge"
+        </Key>
+        <Key "vnode_get_fsm_time_99">
+            Type "gauge"
+        </Key>
+        <Key "vnode_get_fsm_time_mean">
+            Type "gauge"
+        </Key>
+        <Key "vnode_get_fsm_time_median">
+            Type "gauge"
+        </Key>
+        <Key "vnode_gets">
+            Type "gauge"
+        </Key>
+        <Key "vnode_hll_update">
+            Type "gauge"
+        </Key>
+        <Key "vnode_hll_update_time_100">
+            Type "gauge"
+        </Key>
+        <Key "vnode_hll_update_time_95">
+            Type "gauge"
+        </Key>
+        <Key "vnode_hll_update_time_99">
+            Type "gauge"
+        </Key>
+        <Key "vnode_hll_update_time_mean">
+            Type "gauge"
+        </Key>
+        <Key "vnode_hll_update_time_median">
+            Type "gauge"
+        </Key>
+        <Key "vnode_hll_update_total">
+            Type "gauge"
+        </Key>
+        <Key "vnode_index_deletes">
+            Type "gauge"
+        </Key>
+        <Key "vnode_index_deletes_postings">
+            Type "gauge"
+        </Key>
+        <Key "vnode_index_deletes_postings_total">
+            Type "counter"
+        </Key>
+        <Key "vnode_index_deletes_total">
+            Type "counter"
+        </Key>
+        <Key "vnode_index_reads">
+            Type "gauge"
+        </Key>
+        <Key "vnode_index_reads_total">
+            Type "counter"
+        </Key>
+        <Key "vnode_index_refreshes">
+            Type "gauge"
+        </Key>
+        <Key "vnode_index_refreshes_total">
+            Type "counter"
+        </Key>
+        <Key "vnode_index_writes">
+            Type "gauge"
+        </Key>
+        <Key "vnode_index_writes_postings">
+            Type "gauge"
+        </Key>
+        <Key "vnode_index_writes_postings_total">
+            Type "counter"
+        </Key>
+        <Key "vnode_index_writes_total">
+            Type "counter"
+        </Key>
+        <Key "vnode_put_fsm_time_100">
+            Type "gauge"
+        </Key>
+        <Key "vnode_put_fsm_time_95">
+            Type "gauge"
+        </Key>
+        <Key "vnode_put_fsm_time_99">
+            Type "gauge"
+        </Key>
+        <Key "vnode_put_fsm_time_mean">
+            Type "gauge"
+        </Key>
+        <Key "vnode_put_fsm_time_median">
+            Type "gauge"
+        </Key>
+        <Key "vnode_puts">
+            Type "gauge"
+        </Key>
+        <Key "vnode_set_update">
+            Type "gauge"
+        </Key>
+        <Key "vnode_set_update_time_100">
+            Type "gauge"
+        </Key>
+        <Key "vnode_set_update_time_95">
+            Type "gauge"
+        </Key>
+        <Key "vnode_set_update_time_99">
+            Type "gauge"
+        </Key>
+        <Key "vnode_set_update_time_mean">
+            Type "gauge"
+        </Key>
+        <Key "vnode_set_update_time_median">
+            Type "gauge"
+        </Key>
+        <Key "vnode_set_update_total">
+            Type "counter"
+        </Key>
+        <Key "write_once_merge">
+            Type "gauge"
+        </Key>
+        <Key "write_once_put_objsize_100">
+            Type "gauge"
+        </Key>
+        <Key "write_once_put_objsize_95">
+            Type "gauge"
+        </Key>
+        <Key "write_once_put_objsize_99">
+            Type "gauge"
+        </Key>
+        <Key "write_once_put_objsize_mean">
+            Type "gauge"
+        </Key>
+        <Key "write_once_put_objsize_median">
+            Type "gauge"
+        </Key>
+        <Key "write_once_put_time_100">
+            Type "gauge"
+        </Key>
+        <Key "write_once_put_time_95">
+            Type "gauge"
+        </Key>
+        <Key "write_once_put_time_99">
+            Type "gauge"
+        </Key>
+        <Key "write_once_put_time_mean">
+            Type "gauge"
+        </Key>
+        <Key "write_once_put_time_median">
+            Type "gauge"
+        </Key>
+        <Key "write_once_puts">
+            Type "gauge"
+        </Key>
+        <Key "write_once_puts_total">
+            Type "counter"
+        </Key>
+    </URL>
+</Plugin>
+
+LoadPlugin match_regex
+LoadPlugin target_set
+LoadPlugin target_replace
+<Chain "curl_json_riak_custom">
+    <Rule "rewrite_curl_json_to_riak">
+        <Match regex>
+            Plugin "^curl_json$"
+            PluginInstance "^riak.*$"
+        </Match>
+        <Target "replace">
+            PluginInstance "^riak" ""
+        </Target>
+        <Target "set">
+            MetaData "stackdriver_metric_type" "custom.googleapis.com/riak/%{type_instance}"
+            Plugin "riak"
+        </Target>
+    </Rule>
+    <Rule "rewrite_empty_plugininstance">
+        <Match regex>
+            PluginInstance "^$"
+        </Match>
+        <Target "set">
+            PluginInstance "localhost"
+        </Target>
+    </Rule>
+    <Rule "go_back">
+        Target "return"
+    </Rule>
+</Chain>
+
+<Chain "PreCache">
+    <Rule "jump_to_curl_json_riak_custom">
+        <Target "jump">
+            Chain "curl_json_riak_custom"
+        </Target>
+    </Rule>
+</Chain>
+PreCacheChain "PreCache"
+
