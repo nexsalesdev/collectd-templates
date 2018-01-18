@@ -15,7 +15,7 @@ LoadPlugin curl_json
             Type "gauge"
         </Key>
         <Key "pbc_connects_total">
-            Type "counter"
+            Type "gauge"
         </Key>
         <Key "converge_delay_last">
             Type "gauge"
@@ -327,7 +327,7 @@ LoadPlugin curl_json
             Type "counter"
         </Key>
         <Key "object_merge">
-            Type "gauge"
+            Type "counter"
         </Key>
         <Key "object_merge_time_100">
             Type "gauge"
